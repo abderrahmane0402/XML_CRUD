@@ -2,7 +2,7 @@
 
 // Load the XML document
 $xml = new DOMDocument();
-$xml->load('scolarite.xml');
+$xml->load('DataBase.xml');
 
 // Load the XSLT stylesheet
 $xsl = new DOMDocument();
