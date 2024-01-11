@@ -5,6 +5,7 @@ use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
 try {
+    extract($_POST);
     // create session
     $session = new Session("localhost", 1984, "admin", "admin");
 
@@ -17,6 +18,7 @@ try {
     foreach ($query as $resultItem) {
         print $resultItem . "\n";
     }
+    print $text;
     // close session
     $session->close();
 

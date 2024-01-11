@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="database">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Concours" type="ConcoursType" />
+                <xs:element name="Specialites" type="SpecialitesType" />
+                <xs:element name="Diplomes" type="DiplomesType" />
+                <xs:element name="Candidats" type="CandidatsType" />
+                <xs:element name="Candidatures" type="CandidaturesType" />
+                <xs:element name="Choixs" type="ChoixsType" />
+            </xs:sequence>
+        </xs:complexType>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - pramiryKey- - - - - - - - - -
+        - - - - - - - - - - - - - - - - -  -->
+        <xs:key name="ConcourKey">
+            <xs:selector xpath=".//Concour" />
+            <xs:field xpath="@ID_Concours" />
+        </xs:key>
+        <xs:key name="SpecialiteKey">
+            <xs:selector xpath=".//Specialite" />
+            <xs:field xpath="@ID_Specialite" />
+        </xs:key>
+        <xs:key name="DiplomeKey">
+            <xs:selector xpath=".//Diplome" />
+            <xs:field xpath="@ID_Diplome" />
+        </xs:key>
+        <xs:key name="CandidatKey">
+            <xs:selector xpath=".//Candidat" />
+            <xs:field xpath="@ID_Candidat" />
+        </xs:key>
+        <xs:key name="CandidatureKey">
+            <xs:selector xpath=".//Candidature" />
+            <xs:field xpath="@ID_Candidature" />
+        </xs:key>
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - forgeinKey- - - - - - - - - -
+        - - - - - - - - - - - - - - - - -  -->
+        <xs:keyref name="DiplomeType_SpecialiteRef" refer="SpecialiteKey">
+            <xs:selector xpath=".//Diplome" />
+            <xs:field xpath="@ID_Specialite" />
+        </xs:keyref>
+
+        <xs:keyref name="CandidatType_DiplomeRef" refer="DiplomeKey">
+            <xs:selector xpath=".//Candidat" />
+            <xs:field xpath="@ID_Diplome" />
+        </xs:keyref>
+
+        <xs:keyref name="CandidatureType_CandidatRef" refer="CandidatKey">
+            <xs:selector xpath=".//Candidature" />
+            <xs:field xpath="@ID_Candidat" />
+        </xs:keyref>
+
+        <xs:keyref name="ChoixType_CandidatureRef" refer="CandidatureKey">
+            <xs:selector xpath=".//Choix" />
+            <xs:field xpath="@ID_Candidature" />
+        </xs:keyref>
+        <xs:keyref name="ChoixType_ConcoursRef" refer="ConcourKey">
+            <xs:selector xpath=".//Choix" />
+            <xs:field xpath="@ID_Concours" />
+        </xs:keyref>
+
+
+    </xs:element>
+    <xs:complexType name="ConcoursType">
+        <xs:sequence>
+            <xs:element name="Concour" type="ConcourType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SpecialitesType">
+        <xs:sequence>
+            <xs:element name="Specialite" type="SpecialiteType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DiplomesType">
+        <xs:sequence>
+            <xs:element name="Diplome" type="DiplomeType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CandidatsType">
+        <xs:sequence>
+            <xs:element name="Candidat" type="CandidatType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CandidaturesType">
+        <xs:sequence>
+            <xs:element name="Candidature" type="CandidatureType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ChoixsType">
+        <xs:sequence>
+            <xs:element name="Choix" type="ChoixType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Table- - - - - - - - - - - - - -
+    - - - - - - - - -->
+    <!--    table de Concours   -->
+    <xs:complexType name="ConcourType">
+
+        <xs:sequence>
+            <xs:element name="NomConcours" type="xs:string" />
+            <xs:element name="DateConcours" type="xs:string" />
+            <xs:element name="LieuConcours" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="ID_Concours" type="xs:int" use="required" />
+    </xs:complexType>
+
+    <!--    table de Diplome  -->
+    <xs:complexType name="DiplomeType">
+        <xs:sequence>
+            <xs:element name="AnneeObtention" type="xs:int" />
+        </xs:sequence>
+        <xs:attribute name="ID_Diplome" type="xs:int" use="required" />
+        <xs:attribute name="ID_Specialite" type="xs:int" use="required" />
+    </xs:complexType>
+    <!-- table specialite -->
+    <xs:complexType name="SpecialiteType">
+
+        <xs:sequence>
+            <!--<xs:element
+            name="ID_Specialite" type="xs:int"/>-->
+            <xs:element name="libelle" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="ID_Specialite" type="xs:int" use="required" />
+    </xs:complexType>
+    <!-- //table Candidat-->
+    <xs:complexType name="CandidatType">
+
+
+        <xs:sequence>
+            <!--            <xs:element name="ID_Candidat" type="xs:int"/> -->
+            <!--<xs:element
+            name="cin" type="xs:string"/>-->
+            <!--<xs:element
+            name="cne" type="xs:string"/>-->
+            <xs:element name="Nom" type="xs:string" />
+            <xs:element name="Prenom" type="xs:string" />
+            <xs:element name="email" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+            <xs:element name="telephone" type="xs:integer" />
+            <xs:element name="DateNaissance" type="xs:date" />
+            <!-- <xs:element name="ID_Diplome" type="xs:int"/>-->
+        </xs:sequence>
+        <xs:attribute name="ID_Candidat" type="xs:int" use="required" />
+        <xs:attribute name="ID_Diplome" type="xs:int" use="required" />
+        <xs:attribute name="cin" type="xs:string" use="required" />
+        <xs:attribute name="cne" type="xs:string" use="required" />
+
+    </xs:complexType>
+    <!--    // table Candidature -->
+    <xs:complexType name="CandidatureType">
+        <xs:sequence>
+            <!--            <xs:element name="ID_Candidature" type="xs:int"/>
+-->
+            <xs:element name="Date_Candidature" type="xs:date" />
+            <!--<xs:element
+            name="ID_Candidat" type="xs:int"/>-->
+        </xs:sequence>
+        <xs:attribute name="ID_Candidature" type="xs:int" use="required" />
+        <xs:attribute name="ID_Candidat" type="xs:int" use="required" />
+
+    </xs:complexType>
+    <!--///
+    table choix  porteuse entre   Candidature et concours -->
+    <xs:complexType name="ChoixType">
+
+        <xs:sequence>
+            <!--      <xs:element name="ID_Candidature" type="xs:int"/>
+            <xs:element name="ID_Concours" type="xs:int"/>-->
+            <xs:element name="Priorite" type="xs:int" />
+        </xs:sequence>
+        <xs:attribute name="ID_Candidature" type="xs:int" use="required" />
+        <xs:attribute name="ID_Concours" type="xs:int" use="required" />
+    </xs:complexType>
+
+</xs:schema>
