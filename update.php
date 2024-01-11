@@ -5,19 +5,17 @@ use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
 try {
+    // create session
     $session = new Session("localhost", 1984, "admin", "admin");
 
     // perform command and print returned string
-    $session->execute("OPEN data");
+    $session->execute("OPEN database");
     print $session->info();
 
-    $query = $session->query("/library/book/year");
+    $query = $session->execute("xquery replace value of node //Concours/Concour[@ID_Concours='3']/NomConcours with 'hello world'");
 
-    foreach ($query as $resultItem) {
-        print $resultItem . "\n";
-    }
-    print $text;
-    // close session
+    print_r($query);
+    // close session    
     $session->close();
 
     // print time needed
