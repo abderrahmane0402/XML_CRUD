@@ -5,19 +5,18 @@ use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
 try {
+    // create session
     $session = new Session("localhost", 1984, "admin", "admin");
 
     // perform command and print returned string
-    $session->query("let $db := doc('C:/xampp/htdocs/XML_CRUD/DataBase.xml')");
-    $query = $session->query("$db//");
-    foreach ($query as $resultItem) {
-        print $resultItem . "\n";
-    }
+    $session->execute("OPEN database");
+    print $session->info();
+
+    $query = $session->execute("xquery delete node //Concours/test");
+
     // close session
     $session->close();
 
-    
-    // print time needed
 } catch (BaseXException $e) {
     // print exception
     print $e->getMessage();
