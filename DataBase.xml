@@ -1,62 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="Database.xsd">
-<Concours>
-    <Concour   ID_Concours="1">
-        <!--<ID_Concours>1</ID_Concours>-->
-        <NomConcours>Programming Competition</NomConcours>
-        <DateConcours>2023-01-01</DateConcours>
-        <LieuConcours>Virtual</LieuConcours>
-    </Concour>
+    xsi:noNamespaceSchemaLocation="Database.xsd">
+    <Concours>
+        <Concour ID_Concours="1">
+            <NomConcours>Programming Competition</NomConcours>
+            <DateConcours>2023-01-01</DateConcours>
+            <LieuConcours>Virtual</LieuConcours>
+        </Concour>
 
-    <Concour ID_Concours="2">
-        <!--<ID_Concours>2</ID_Concours>-->
-        <NomConcours>Math Olympiad</NomConcours>
-        <DateConcours>2023-02-15</DateConcours>
-        <LieuConcours>In-person</LieuConcours>
-    </Concour>
+        <Concour ID_Concours="2">
+            <NomConcours>Math Olympiad</NomConcours>
+            <DateConcours>2023-02-15</DateConcours>
+            <LieuConcours>In-person</LieuConcours>
+        </Concour>
 
-    <Concour ID_Concours="3">
-        <!--<ID_Concours>3</ID_Concours>-->
-        <NomConcours>Science Fair</NomConcours>
-        <DateConcours>2023-03-10</DateConcours>
-        <LieuConcours>Hybrid</LieuConcours>
-    </Concour>
+        <Concour ID_Concours="3">
+            <NomConcours>Science Fair</NomConcours>
+            <DateConcours>2023-03-10</DateConcours>
+            <LieuConcours>Hybrid</LieuConcours>
+        </Concour>
 
-   
-</Concours>
+
+    </Concours>
 
 
     <Specialites>
         <Specialite ID_Specialite="1">
-<!--            <ID_Specialite>1</ID_Specialite>
--->            <libelle>Computer Science</libelle>
+            <libelle>Computer Science</libelle>
         </Specialite>
         <Specialite ID_Specialite="2">
-        <!--<ID_Specialite>2</ID_Specialite>-->
-        <libelle>Electrical Engineering</libelle>
-    </Specialite>
+            <libelle>Electrical Engineering</libelle>
+        </Specialite>
 
-    <Specialite ID_Specialite="3">
-        <!--<ID_Specialite>3</ID_Specialite>-->
-        <libelle>Mechanical Engineering</libelle>
+        <Specialite ID_Specialite="3">
+            <libelle>Mechanical Engineering</libelle>
         </Specialite>
     </Specialites>
 
     <Diplomes>
-        <Diplome ID_Diplome="1" ID_Specialite="1" ID_Candidat="1">
+        <Diplome ID_Diplome="1" ID_Specialite="1">
             <!--<ID_Diplome>1</ID_Diplome>-->
             <AnneeObtention>2022</AnneeObtention>
-            <!--<ID_Specialite>1</ID_Specialite>-->
         </Diplome>
         
-         <Diplome ID_Diplome="2" ID_Specialite="2" ID_Candidat="2">
+         <Diplome ID_Diplome="2" ID_Specialite="2">
         <!--<ID_Diplome>2</ID_Diplome>-->
         <AnneeObtention>2023</AnneeObtention>
         <!--<ID_Specialite>2</ID_Specialite>-->
     </Diplome>
 
-    <Diplome ID_Diplome="3" ID_Specialite="3" ID_Candidat="3">
+    <Diplome ID_Diplome="3" ID_Specialite="3">
         <!--<ID_Diplome>3</ID_Diplome>-->
         <AnneeObtention>2021</AnneeObtention>
         <!--<ID_Specialite>3</ID_Specialite>-->
@@ -64,7 +57,7 @@
     </Diplomes>
 
     <Candidats>
-        <Candidat ID_Candidat="1" cin="123456789" cne="987654321">
+        <Candidat ID_Candidat="1" cin="123456789" cne="987654321" ID_Diplome="1">
           <!--  <ID_Candidat>1</ID_Candidat>
             <cin>123456789</cin>
             <cne>987654321</cne>-->
@@ -74,10 +67,9 @@
             <password>securepassword</password>
             <telephone>1234567890</telephone>
             <DateNaissance>1990-01-01</DateNaissance>
-            <!--<ID_Diplome>1</ID_Diplome>-->
         </Candidat>
         
-        <Candidat ID_Candidat="2" cin="987654321" cne="123456789">
+        <Candidat ID_Candidat="2" cin="987654321" cne="123456789" ID_Diplome="2">
       <!--  <ID_Candidat>2</ID_Candidat>
         <cin>987654321</cin>
         <cne>123456789</cne>-->
@@ -90,7 +82,7 @@
         <!--<ID_Diplome>2</ID_Diplome>-->
     </Candidat>
 
-    <Candidat ID_Candidat="3" cin="555555555" cne="111111111">
+    <Candidat ID_Candidat="3" cin="555555555" cne="111111111" ID_Diplome="3">
        <!-- <ID_Candidat>3</ID_Candidat>
         <cin>555555555</cin>
         <cne>111111111</cne>-->
@@ -105,45 +97,31 @@
     </Candidats>
     <Candidatures>
         <Candidature ID_Candidature="1" ID_Candidat="1">
-<!--            <ID_Candidature>1</ID_Candidature>
--->            <Date_Candidature>2023-01-15</Date_Candidature>
-            <!--<ID_Candidat>1</ID_Candidat>-->
+            <Date_Candidature>2023-01-15</Date_Candidature>
         </Candidature>
-        
-        <Candidature  ID_Candidature="2" ID_Candidat="2">
-    <!--    <ID_Candidature>2</ID_Candidature>-->
-        <Date_Candidature>2023-02-28</Date_Candidature>
-      <!--  <ID_Candidat>2</ID_Candidat>-->
-    </Candidature>
 
-    <Candidature  ID_Candidature="3" ID_Candidat="3">
-<!--        <ID_Candidature>3</ID_Candidature>-->
-        <Date_Candidature>2023-03-20</Date_Candidature>
-      <!--  <ID_Candidat>3</ID_Candidat>-->
-    </Candidature>
+        <Candidature ID_Candidature="2" ID_Candidat="2">
+            <Date_Candidature>2023-02-28</Date_Candidature>
+        </Candidature>
+
+        <Candidature ID_Candidature="3" ID_Candidat="3">
+            <Date_Candidature>2023-03-20</Date_Candidature>
+        </Candidature>
     </Candidatures>
 
     <Choixs>
         <Choix ID_Candidature="1" ID_Concours="1">
-            <!--<ID_Candidature>1</ID_Candidature>
-            <ID_Concours>1</ID_Concours>-->
             <Priorite>1</Priorite>
         </Choix>
-         <Choix ID_Candidature="1" ID_Concours="2">
-        <!--<ID_Candidature>1</ID_Candidature>
-        <ID_Concours>2</ID_Concours>-->
-        <Priorite>2</Priorite>
-    </Choix>
+        <Choix ID_Candidature="1" ID_Concours="2">
+            <Priorite>2</Priorite>
+        </Choix>
 
-    <Choix ID_Candidature="1" ID_Concours="3">
-       <!-- <ID_Candidature>1</ID_Candidature>
-        <ID_Concours>3</ID_Concours>-->
-        <Priorite>3</Priorite>
-    </Choix>
-           <Choix ID_Candidature="3" ID_Concours="2">
-        <!--<ID_Candidature>3</ID_Candidature>
-        <ID_Concours>2</ID_Concours>-->
-        <Priorite>2</Priorite>
-    </Choix>
+        <Choix ID_Candidature="1" ID_Concours="3">
+            <Priorite>3</Priorite>
+        </Choix>
+        <Choix ID_Candidature="3" ID_Concours="2">
+            <Priorite>2</Priorite>
+        </Choix>
     </Choixs>
 </database>

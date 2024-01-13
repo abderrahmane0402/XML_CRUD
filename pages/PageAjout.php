@@ -84,9 +84,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Template</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Ajout</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Template</h6>
+                    <h6 class="font-weight-bolder mb-0">Page d'ajout des information de condidat</h6>
                 </nav>
             </div>
         </nav>
@@ -94,15 +94,121 @@
             <div class="card">
                 <div class="card-header p-3 pt-2">
                     <div class="text-start pt-1">
-                        <p class="text-lg mb-0 text-capitalize">Ajouter vos informations</p>
+                        <p class="text-lg mb-0 text-capitalize">Information Personnel</p>
                     </div>
                 </div>
                 <hr class="dark horizontal my-0">
                 <div class="card-footer p-3">
+                    <form action="../actions/ajout.php" method="post" role="form">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Nom</label>
+                                    <input name="nom" type="text" class="form-control">
+                                </div>
+                            </div>
 
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Prenom</label>
+                                    <input name="prenom" type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Telephone</label>
+                                    <input name="telephone" type="tel" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <input name="date_n" type="date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">CIN</label>
+                                    <input name="cin" type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">CNE</label>
+                                    <input name="cne" type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input name="email" type="email" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input name="password" type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row mb-3'>
+                            <div class="card-header p-3 pt-2">
+                                <div class="text-start pt-1">
+                                    <p class="text-lg mb-0 text-capitalize">information sur le diplome</p>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Annee d'option</label>
+                                    <input name="anne" type="number" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="input-group input-group-outline mb-4">
+                                    <select name="specialite" aria-placeholder="specialite" class="form-control"
+                                        id="exampleFormControlSelect1">
+                                        <option value="0">Specialite</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row mb-3'>
+                            <div class="card-header p-3 pt-2">
+                                <div class="text-start pt-1">
+                                    <p class="text-lg mb-0 text-capitalize">Condidature</p>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                        </div>
+                        <div class="input-group input-group-static">
+                            <label for="exampleFormControlSelect2" class="ms-0">Example multiple select</label>
+                            <select multiple="" class="form-control pb-4" id="exampleFormControlSelect2"
+                                name="concours[]">
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Enregistrer</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
         </div>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
