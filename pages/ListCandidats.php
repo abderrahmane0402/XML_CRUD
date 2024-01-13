@@ -12,7 +12,6 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
-<?php include_once('../test.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +28,7 @@
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -58,7 +58,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active  " href="../pages/dashboard.html">
+          <a class="nav-link text-white   " href="../pages/templite.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -66,7 +66,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="./ListCandidats.php">
+          <a class="nav-link text-white active " href="../pages/ListCandidats.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -84,9 +84,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Template</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Liste des Condidats</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Template</h6>
+          <h6 class="font-weight-bolder mb-0">Liste des Condidats</h6>
         </nav>
       </div>
     </nav>
@@ -99,11 +99,34 @@
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-3">
-          contenu
-        </div>
-      </div>
-    </div>
-    </div>
+          <!--
+// v0 by Vercel.
+// https://v0.dev/t/oJQiTqN0HcM
+-->
+          
+                  <!-- <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">123456</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">AB123456</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Jean</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Dupont</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">01/01/1990</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">+212 6 12345678</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">jean.dupont@example.com</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">********</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+                      <button
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-green-500 text-white mr-2">
+                        Update
+                      </button>
+                      <button
+                        class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-red-500 text-white">
+                        Delete
+                      </button>
+                    </td>
+                  </tr> -->
+                  <?php   include_once("../test.php"); ?>
+
+            
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <footer class="footer py-4  ">
