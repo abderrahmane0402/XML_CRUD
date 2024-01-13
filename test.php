@@ -11,21 +11,14 @@ try {
     if (!file_exists($xmlFilePath)) {
         throw new Exception("XML file not found at: $xmlFilePath");
     }
-
     $session = new Session("localhost", 1984, "admin", "admin");
-    // $session->execute("OPEN DataBase");
-    // Perform XQuery and fetch the results
     $session->execute("OPEN database");
     $query = $session->query("for \$candidat in doc('$xmlFilePath')//Candidat return \$candidat");
-
-    // Initialize an empty array to store table rows
     $tableRows = [];
 
+    
     foreach ($query as $resultItem) {
-        // Parse each result as XML
         $candidatXML = simplexml_load_string($resultItem);
-
-        // Extract data from XML
         $idCandidat = $candidatXML['ID_Candidat'];
         $cne = $candidatXML['cne'];
         $cin = $candidatXML['cin'];
@@ -36,7 +29,6 @@ try {
         $email = $candidatXML->email;
         $password = $candidatXML->password;
 
-        // Generate a table row and add it to the array
         $tableRows[] = "
             <tr class=\"border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted\">
                 <td class=\"p-4 align-middle [&amp;:has([role=checkbox])]:pr-0\">{$cne}</td>
@@ -59,11 +51,7 @@ try {
         ";
     }
     
-
-    // Close session
     $session->close();
-
-    // Output the HTML with dynamic table rows
     echo "
         <div class=\"w-full overflow-x-auto\">
             <div class=\"relative w-full overflow-auto\">
@@ -106,7 +94,6 @@ try {
         </div>
     </div>
 ";
-
 } catch (BaseXException $e) {
 // Print exception
 print $e->getMessage();
