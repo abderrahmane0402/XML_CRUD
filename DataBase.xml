@@ -44,19 +44,19 @@
     </Specialites>
 
     <Diplomes>
-        <Diplome ID_Diplome="1" ID_Specialite="1">
+        <Diplome ID_Diplome="1" ID_Specialite="1" ID_Candidat="1">
             <!--<ID_Diplome>1</ID_Diplome>-->
             <AnneeObtention>2022</AnneeObtention>
             <!--<ID_Specialite>1</ID_Specialite>-->
         </Diplome>
         
-         <Diplome ID_Diplome="2" ID_Specialite="2">
+         <Diplome ID_Diplome="2" ID_Specialite="2" ID_Candidat="2">
         <!--<ID_Diplome>2</ID_Diplome>-->
         <AnneeObtention>2023</AnneeObtention>
         <!--<ID_Specialite>2</ID_Specialite>-->
     </Diplome>
 
-    <Diplome ID_Diplome="3" ID_Specialite="3">
+    <Diplome ID_Diplome="3" ID_Specialite="3" ID_Candidat="3">
         <!--<ID_Diplome>3</ID_Diplome>-->
         <AnneeObtention>2021</AnneeObtention>
         <!--<ID_Specialite>3</ID_Specialite>-->
@@ -64,7 +64,7 @@
     </Diplomes>
 
     <Candidats>
-        <Candidat ID_Candidat="1" cin="123456789" cne="987654321" ID_Diplome="1">
+        <Candidat ID_Candidat="1" cin="123456789" cne="987654321">
           <!--  <ID_Candidat>1</ID_Candidat>
             <cin>123456789</cin>
             <cne>987654321</cne>-->
@@ -77,7 +77,7 @@
             <!--<ID_Diplome>1</ID_Diplome>-->
         </Candidat>
         
-        <Candidat ID_Candidat="2" cin="987654321" cne="123456789" ID_Diplome="2">
+        <Candidat ID_Candidat="2" cin="987654321" cne="123456789">
       <!--  <ID_Candidat>2</ID_Candidat>
         <cin>987654321</cin>
         <cne>123456789</cne>-->
@@ -90,7 +90,7 @@
         <!--<ID_Diplome>2</ID_Diplome>-->
     </Candidat>
 
-    <Candidat ID_Candidat="3" cin="555555555" cne="111111111" ID_Diplome="3">
+    <Candidat ID_Candidat="3" cin="555555555" cne="111111111">
        <!-- <ID_Candidat>3</ID_Candidat>
         <cin>555555555</cin>
         <cne>111111111</cne>-->

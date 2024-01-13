@@ -42,9 +42,9 @@
             <xs:field xpath="@ID_Specialite" />
         </xs:keyref>
 
-        <xs:keyref name="CandidatType_DiplomeRef" refer="DiplomeKey">
-            <xs:selector xpath=".//Candidat" />
-            <xs:field xpath="@ID_Diplome" />
+        <xs:keyref name="DiplomeType_CandidatRef" refer="CandidatKey">
+            <xs:selector xpath=".//Diplome" />
+            <xs:field xpath="@ID_Candidat" />
         </xs:keyref>
 
         <xs:keyref name="CandidatureType_CandidatRef" refer="CandidatKey">
@@ -117,6 +117,7 @@
         </xs:sequence>
         <xs:attribute name="ID_Diplome" type="xs:int" use="required" />
         <xs:attribute name="ID_Specialite" type="xs:int" use="required" />
+        <xs:attribute name="ID_Candidat" type="xs:int" use="required" />
     </xs:complexType>
     <!-- table specialite -->
     <xs:complexType name="SpecialiteType">
@@ -147,7 +148,6 @@
             <!-- <xs:element name="ID_Diplome" type="xs:int"/>-->
         </xs:sequence>
         <xs:attribute name="ID_Candidat" type="xs:int" use="required" />
-        <xs:attribute name="ID_Diplome" type="xs:int" use="required" />
         <xs:attribute name="cin" type="xs:string" use="required" />
         <xs:attribute name="cne" type="xs:string" use="required" />
 
