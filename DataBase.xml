@@ -97,7 +97,7 @@
         <Nom>Alice</Nom>
         <Prenom>Johnson</Prenom>
         <email>alice.johnson@example.com</email>
-        <password>securepassword123</password>
+        <password>securepass</password>
         <telephone>5555555555</telephone>
         <DateNaissance>1995-08-20</DateNaissance>
 <!--        <ID_Diplome>3</ID_Diplome>
