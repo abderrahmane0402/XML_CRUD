@@ -12,7 +12,7 @@ try {
     $session->execute("OPEN database");
     print $session->info();
 
-    $query = $session->execute("xquery insert node (<test />) into //Concours");
+    $query = $session->execute("xquery //");
 
     print_r($query);
     // close session
