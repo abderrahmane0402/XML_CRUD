@@ -1,17 +1,49 @@
-<!--
-=========================================================
-* Material Dashboard 2 - v3.1.0
-=========================================================
+<?php
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
+include_once '../load.php';
+use BaseXClient\BaseXException;
+use BaseXClient\Session;
 
-=========================================================
+try {
+    $session = new Session("localhost", 1984, "admin", "admin");
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+    // perform command and print returned string
+    $session->execute("OPEN database");
+
+    $query = $session->query("//Specialites/Specialite/libelle/text()");
+    $query2 = $session->query("//Specialites/Specialite/@ID_Specialite");
+    foreach ($query as $key => $value) {
+        $specialite[$key] = $value;
+    }
+    foreach ($query2 as $key => $value) {
+        if (preg_match('/"([^"]+)"/', $value, $matches)) {
+            $id = $matches[1];
+        }
+        $specialites[$id] = $specialite[$key];
+    }
+
+    $query = $session->query("//Concours/Concour/NomConcours/text()");
+    $query2 = $session->query("//Concours/Concour/@ID_Concours");
+    foreach ($query as $key => $value) {
+        $concour[$key] = $value;
+    }
+    foreach ($query2 as $key => $value) {
+        if (preg_match('/"([^"]+)"/', $value, $matches)) {
+            $id = $matches[1];
+        }
+        $concours[$id] = $concour[$key];
+    }
+
+    // close session
+    $session->close();
+
+
+    // print time needed
+} catch (BaseXException $e) {
+    // print exception
+    print $e->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,6 +209,11 @@
                                     <select name="specialite" aria-placeholder="specialite" class="form-control"
                                         id="exampleFormControlSelect1">
                                         <option value="0">Specialite</option>
+                                        <?php foreach ($specialites as $key => $value) { ?>
+                                            <option value="<?= $key ?>">
+                                                <?= $value ?>
+                                            </option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -193,11 +230,11 @@
                             <label for="exampleFormControlSelect2" class="ms-0">Example multiple select</label>
                             <select multiple="" class="form-control pb-4" id="exampleFormControlSelect2"
                                 name="concours[]">
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <?php foreach ($concours as $key => $value) { ?>
+                                    <option value="<?= $key ?>">
+                                        <?= $value ?>
+                                    </option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="row">
