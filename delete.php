@@ -6,24 +6,29 @@ use BaseXClient\Session;
 
 try {
 
-   
+   $id=$_GET['id'];
 
-    print($id);
+    
     // create session
     $session = new Session("localhost", 1984, "admin", "admin");
 
     // perform command and print returned string
-    $session->execute("OPEN database");
-    print $session->info();
+    $session->execute("OPEN Xml_project");
+    
 
-    $query = $session->execute("xquery delete node //database/Concours/Concour[@ID_Concours=2]");
+    $query = $session->execute("xquery delete node //Candidats/Candidat[@ID_Candidat=$id]");
 
     // close session
     $session->close();
+   
+    
     
         
 } catch (BaseXException $e) {
     // print exception
     print $e->getMessage();
 }
-
+?>
+<script>
+    window.location.href = "./pages/ListCandidats.php";
+    </script>

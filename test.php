@@ -6,14 +6,16 @@ use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
 try {
-    $xmlFilePath = 'C:\xampp\htdocs\XML_CRUD\DataBase.xml';
+    // $xmlFilePath = 'C:\xampp\htdocs\XML_CRUD\DataBase.xml';
 
-    if (!file_exists($xmlFilePath)) {
-        throw new Exception("XML file not found at: $xmlFilePath");
-    }
+    // if (!file_exists($xmlFilePath)) {
+    //     throw new Exception("XML file not found at: $xmlFilePath");
+    // }
     $session = new Session("localhost", 1984, "admin", "admin");
-    $session->execute("OPEN database");
-    $query = $session->query("for \$candidat in doc('$xmlFilePath')//Candidat return \$candidat");
+    $session->execute("OPEN Xml_project");
+   
+    $query = $session->query("for \$candidat in //Candidat return \$candidat");
+    
     $tableRows = [];
 
     
