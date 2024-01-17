@@ -58,7 +58,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white   " href="../pages/templite.php">
+          <a class="nav-link text-white   " href="../pages/PageAjout.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -94,7 +94,7 @@
       <div class="card">
         <div class="card-header p-3 pt-2">
           <div class="text-start pt-1">
-            <p class="text-lg mb-0 text-capitalize">Titre</p>
+            <p class="text-lg mb-0 text-capitalize"></p>
           </div>
         </div>
         <hr class="dark horizontal my-0">
@@ -103,8 +103,8 @@
 // v0 by Vercel.
 // https://v0.dev/t/oJQiTqN0HcM
 -->
-          
-                  <!-- <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+
+          <!-- <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                     <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">123456</td>
                     <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">AB123456</td>
                     <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Jean</td>
@@ -124,47 +124,49 @@
                       </button>
                     </td>
                   </tr> -->
-                  <?php   include_once("../test.php"); ?>
+          <?php include_once("../test.php"); ?>
 
-            
-    <!-- End Navbar -->
-    <div class="container-fluid py-4">
-      <footer class="footer py-4  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+
+          <!-- End Navbar -->
+          <div class="container-fluid py-4">
+            <footer class="footer py-4  ">
+              <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                  <div class="col-lg-6 mb-lg-0 mb-4">
+                    <div class="copyright text-center text-sm text-muted text-lg-start">
+                      ©
+                      <script>
+                        document.write(new Date().getFullYear())
+                      </script>,
+                      made with <i class="fa fa-heart"></i> by
+                      <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                      for a better web.
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                      <li class="nav-item">
+                        <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative
+                          Tim</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
+                          target="_blank">About
+                          Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
+                          target="_blank">License</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About
-                    Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                    target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
+            </footer>
           </div>
-        </div>
-      </footer>
-    </div>
   </main>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>

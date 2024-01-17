@@ -65,7 +65,8 @@ try {
 
     $session->close();
 
-    header("../pages/PageUpdate.php");
+    header("Location: http://localhost/php/pages/ListCandidats.php");
+    exit();
 
 } catch (BaseXException $e) {
     // print exception

@@ -52,7 +52,7 @@ try {
 
 
     $session->close();
-    header("Location: http://localhost/php/pages/PageUpdate.php?id=$id");
+    header("Location: http://localhost/php/pages/ListCandidats.php");
     exit();
 
 

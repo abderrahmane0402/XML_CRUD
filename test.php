@@ -1,4 +1,3 @@
-
 <?php
 
 include_once 'load.php';
@@ -12,13 +11,13 @@ try {
     //     throw new Exception("XML file not found at: $xmlFilePath");
     // }
     $session = new Session("localhost", 1984, "admin", "admin");
-    $session->execute("OPEN Xml_project");
-   
+    $session->execute("OPEN database");
+
     $query = $session->query("for \$candidat in //Candidat return \$candidat");
-    
+
     $tableRows = [];
 
-    
+
     foreach ($query as $resultItem) {
         $candidatXML = simplexml_load_string($resultItem);
         $idCandidat = $candidatXML['ID_Candidat'];
@@ -42,9 +41,9 @@ try {
                 <td class=\"p-4 align-middle [&amp;:has([role=checkbox])]:pr-0\">{$email}</td>
                 <td class=\"p-4 align-middle [&amp;:has([role=checkbox])]:pr-0\">{$password}</td>
                 <td class=\"p-4 align-middle [&amp;:has([role=checkbox])]:pr-0\">
-                    <button class=\"inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-green-500 text-white mr-2\">
+                    <a href=\"../pages/PageUpdate.php?id={$idCandidat} \" class=\"inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-green-500 text-white mr-2\">
                         Update
-                    </button>
+                    </a>
                     <a href=\"../delete.php?id={$idCandidat} \"  class= \"inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-red-500 text-white\">
                     Delete
                 </a>
@@ -52,7 +51,7 @@ try {
             </tr>
         ";
     }
-    
+
     $session->close();
     echo "
         <div class=\"w-full overflow-x-auto\">
@@ -97,7 +96,7 @@ try {
     </div>
 ";
 } catch (BaseXException $e) {
-// Print exception
-print $e->getMessage();
+    // Print exception
+    print $e->getMessage();
 }
 ?>
